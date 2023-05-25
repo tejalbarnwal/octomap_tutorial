@@ -1,5 +1,7 @@
 # octomap_tutorial
 
+Request to the readers: Please give a star if you find this repository useful
+
 #### Map Accesssing
 * Traverse nodes with iterators
 ```cpp
@@ -99,6 +101,10 @@ if (octree) // can be NULL
 find_package(octomap REQUIRED)
 include_directories(${OCTOMAP_INCLUDE_DIRS})
 link_libraries(${PROJECT_NAME} ${OCTOMAP_LIBRARIES})
+
+# OR link each executable as below
+add_executable (name file.cpp)
+target_link_libraries(name octomap)
 ```
 * For ROS1:
 	* `manifest.xml`(rosbuild): `<rosdep name="octomap"/>`
@@ -111,6 +117,9 @@ link_libraries(${PROJECT_NAME} ${OCTOMAP_LIBRARIES})
 * Additional ROS packages for integration
 	* `octomap_msgs`: ROS messages & serialization
 	* `octomap_ros`: conversions from native ROS types
+
+
+#### Running OctoMap with ROS2
 
 
 
