@@ -1,6 +1,6 @@
 # octomap_tutorial
 
-Request to the readers: Please give a star if you find this repository useful
+> **Request to the readers**: Please give a star if you find this repository useful
 
 #### Map Accesssing
 * Traverse nodes with iterators
@@ -120,6 +120,34 @@ target_link_libraries(name octomap)
 
 
 #### Running OctoMap with ROS2
+* In order to run octomap server to convert /PointCloud2 msgs into octomap
+```bash
+ros2 launch octomap_server octomap_mapping.launch.xml
+```
+Note: This requires `octomap-ros` and `octomap-msgs` as dependencies
+
+* In order to save octomap
+```bash
+ros2 run octomap_server octomap_saver_node --ros-args -p octomap_path:=(path for saving octomap)
+```
+Note: The extension of octomap path should be `.bt` or `.ot`
+
+#### Flexible Collision Checking(FCL)
+Incase you also want to use FCL with Octrees, please follow the below steps:
+```bash
+git clone https://github.com/danfis/libccd
+cd libccd
+mkdir build && cd build
+cmake -G "Unix Makefiles" -DBUILD_SHARED_LIBS=ON ..
+make && sudo make install
+
+git clone https://github.com/flexible-collision-library/fcl
+cd fcl
+mkdir build
+cd build
+cmake ..
+sudo make install
+```
 
 
 
@@ -129,3 +157,9 @@ Reference:
 2. https://github.com/ycaibb/octomap_rrt
 
 3. https://github.com/ayushgaud/path_planning
+
+4. https://towardsdatascience.com/how-does-a-robot-plan-a-path-in-its-environment-b8e9519c738b
+
+5. https://rrwiyatn.github.io/blog/robotik/2020/05/16/rrt.html
+
+6. 
