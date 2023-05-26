@@ -153,13 +153,5 @@ sudo make install
 
 Reference:
 1. [ROSCon2013 Video](https://vimeo.com/66577259) giving a bried overview about the working and available classes and methods.
-
 2. https://github.com/ycaibb/octomap_rrt
-
 3. https://github.com/ayushgaud/path_planning
-
-4. https://towardsdatascience.com/how-does-a-robot-plan-a-path-in-its-environment-b8e9519c738b
-
-5. https://rrwiyatn.github.io/blog/robotik/2020/05/16/rrt.html
-
-6. 
