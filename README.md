@@ -149,8 +149,6 @@ cmake ..
 sudo make install
 ```
 
-
-
 Reference:
 1. [ROSCon2013 Video](https://vimeo.com/66577259) giving a bried overview about the working and available classes and methods.
 2. https://github.com/ycaibb/octomap_rrt
