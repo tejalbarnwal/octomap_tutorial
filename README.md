@@ -1,6 +1,34 @@
 # octomap_tutorial
 
-> **Request to the readers**: Please give a star if you find this repository useful
+#### What is an Octree?
+- An octree is a tree data structure in which each internal node can be sub-divided into exactly eight children. It is commonly used in computer graphics and mapping to efficiently represent 3D space.  
+- The octree recursively subdivides the space into smaller eight cubic regions. Each of these cubic regions are refered to octant. Each octant can either be empty or contain object or could be further subdivided into eight smaller octants. The tree strucutre is formed by linking these octants tigether.
+
+* How does Octree achieve space efficiency?
+	- The octree exploits the fact that objects in 3D space tend to be clustered together. Therefore, by recusively subdiving the space, the octree can allocate more memory to regions containing high density of objects, while leaving empty regions sparsely represented or unrepresented entirely. 
+	- As a result, the octree adapts to the distribution of objects in space. Regions with a high density of objects are represented by a higher number of tree nodes, while regions with no objects or low density are represented by fewer nodes or no nodes at all. This adaptive nature allows the octree to efficiently represent both dense and sparse regions, optimizing memory usage.
+
+* How does this help to efficiently quering the nodes?
+	- When you query nodes in a octree, you want to access, or perform operations on specific nodes in an octree
+	- This could involve:
+		- checking containment(determining whether a particular point or region lies within a specific node or set of nodes)
+		- finding nearest neighbors(searching for the closest neighboring nodes to a given point or object)
+		- retrieving information(attributes like occupancy probabilt, 3D coordinates of the associated node)
+	- 
+
+
+#### What is an octomap?
+It is an extension of the octree data strucutre, widely used for repsentating and quering 3D occupancy maps. It is commonly employed in robotics application especially for 3D planning. In OctoMap, each node of the octree represents a cubic region of space, similar to the basic octree structure. However, in addition to the occupancy state (either occupied or free), OctoMap also stores probabilistic information about the occupancy of each node. This probabilistic representation allows for more nuanced and accurate modeling of uncertain or unknown regions.
+
+Now, you maybe wondering why use octree to represent a map as quering data in 3D array would much simpler and direct, but octrees offer advantages in handling sparse data, representing complex geometry, and adapting to varying object density. The choice between a 3D array and an octree depends on the specific requirements of your application and the characteristics of the data and environment you are working with.
+
+
+Some key points:
+- Octomap model unknown, known unoccupied and known occupied spaces.
+- The minimum voxel size determines the resolution of the octree
+- Sensor model Probabilties
+- Clamping
+
 
 #### Map Accesssing
 * Traverse nodes with iterators
