@@ -12,10 +12,9 @@
 int main(int argc, char const *argv[])
 {
 	// read an binary file to obtain an Octree
-	const std::string filename = "/home/gourav-ast/slam_repos/octomap_tutorial/examples/build/simple_tree.bt";
+	const std::string filename = "../sample_octomap.bt";
 	octomap::OcTree temp_tree(0.1);
 	bool success = temp_tree.readBinary(filename);
-
 
 	std::cout << "Read octree?: " << success << "\n";
 
